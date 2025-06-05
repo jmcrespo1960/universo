@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-cosmic-dark text-cosmic-light font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .btn-primary {
+    @apply bg-cosmic-accent text-cosmic-dark font-semibold py-2 px-6 rounded-md 
+           hover:bg-opacity-80 transition-all duration-300 inline-block;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-cosmic-accent text-cosmic-accent font-semibold py-2 px-6 
+           rounded-md hover:bg-cosmic-accent hover:bg-opacity-10 transition-all duration-300 inline-block;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-serif font-semibold mb-6 text-cosmic-accent;
+  }
+  
+  .card {
+    @apply bg-cosmic-indigo bg-opacity-50 backdrop-blur-sm rounded-lg p-6 border border-cosmic-purple/30 hover:border-cosmic-accent/50 transition-all duration-300;
+  }
+}
+
+.cosmic-bg {
+  background: linear-gradient(to bottom, #121A3E, #1F2A6B, #2D1B4E);
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 4s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.3; }
+}
+
+.parallax-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
